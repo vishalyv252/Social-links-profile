@@ -1,0 +1,50 @@
+<main class="flex justify-center items-center h-screen w-full overflow-x-hidden overflow-y-auto bg-Off_Black font-Inter">
+  <div class="flex justify-center items-center h-auto w-auto m-auto p-20">
+
+    <!-- This UI is displayed in all devices except Small and Too Small Mobile devices. -->
+    <div class="block Small_Mobiles_Device_Size:hidden Extra_Small_Mobiles_Device_Size:hidden">
+      <div class="flex flex-col justify-center items-center bg-Dark_Grey p-4 rounded-xl h-auto w-96 Large_Mobiles_Device_Size:w-80">
+        <img src="{{avatar_image_link}}" alt="{{avatar_image_description}}" class="h-16 w-16 rounded-full my-3" />
+        <h1 class="text-White font-semibold text-2xl">{{full_name}}</h1>
+        <p class="text-Green font-normal mt-1.5 text-sm">{{place}}, {{country}}</p>
+        <p class="text-White font-normal my-3 text-center text-sm">{{designation_role}}</p>
+        <div *ngFor="let social_links of social_media_links" class="w-full p-2">
+          <a href="{{social_links.link}}" class="h-full w-full">
+            <p class="p-3 text-center text-White font-bold bg-Grey rounded-xl cursor-pointer hover:bg-Green hover:text-Off_Black text-base">{{social_links.link_name}}</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- This UI is displayed only in Small Mobile Devices. -->
+    <div class="hidden Small_Mobiles_Device_Size:block Extra_Small_Mobiles_Device_Size:hidden">
+      <div class="flex flex-col justify-center items-center bg-Dark_Grey p-4 rounded-xl h-auto w-72">
+        <img src="{{avatar_image_link}}" alt="{{avatar_image_description}}" class="h-14 w-14 rounded-full my-3" />
+        <h1 class="text-White font-semibold text-xl">{{full_name}}</h1>
+        <p class="text-Green font-normal mt-1.5 text-xs">{{place}}, {{country}}</p>
+        <p class="text-White font-normal my-3 text-center text-xs">{{designation_role}}</p>
+        <div *ngFor="let social_links of social_media_links" class="w-full p-2">
+          <a href="{{social_links.link}}" class="h-full w-full">
+            <p class="p-3 text-center text-White font-bold bg-Grey rounded-xl cursor-pointer hover:bg-Green hover:text-Off_Black text-sm">{{social_links.link_name}}</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- This UI is displayed only in Too Small Mobile devices. -->
+    <div class="hidden Small_Mobiles_Device_Size:hidden Extra_Small_Mobiles_Device_Size:block">
+      <div class="flex flex-col justify-center items-center bg-Dark_Grey p-4 rounded-xl h-auto w-60">
+        <img src="{{avatar_image_link}}" alt="{{avatar_image_description}}" class="h-12 w-12 rounded-full my-3" />
+        <h1 class="text-White font-semibold text-base">{{full_name}}</h1>
+        <p class="text-Green font-normal mt-1.5 text-[10px]">{{place}}, {{country}}</p>
+        <p class="text-White font-normal my-3 text-center text-[10px]">{{designation_role}}</p>
+        <div *ngFor="let social_links of social_media_links" class="w-full p-2">
+          <a href="{{social_links.link}}" class="h-full w-full">
+            <p class="p-3 text-center text-White font-bold bg-Grey rounded-xl cursor-pointer hover:bg-Green hover:text-Off_Black text-xs">{{social_links.link_name}}</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
